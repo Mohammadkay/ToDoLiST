@@ -12,7 +12,7 @@ function platform() {
         <Sidebar />
 
         <div style={{ width: "80%" }}>
-          <Navbar />
+          <Navbar add={true} />
           <Lists />
         </div>
       </div>

@@ -6,12 +6,11 @@ import "./List.css";
 import Task from "./Task";
 import { funContext } from "../../context/FunProvider";
 function Lists() {
-  const { setPop, pop } = useContext(funContext);
+  const { setPop, pop, setshowInfo } = useContext(funContext);
   const [lists, setLists] = useState([]);
   const [board, setBoard] = useState([]);
 
   const parms = useParams();
-  console.log("parms.id:", parms.id); // Check the value of parms.id
 
   const getBoards = async () => {
     try {
@@ -95,7 +94,7 @@ function Lists() {
           {list?.tasks.map((task) => {
             return (
               <div>
-                <Task id={task} />
+                <Task id={task} lists={lists} gitList={getList}  />
               </div>
             );
           })}

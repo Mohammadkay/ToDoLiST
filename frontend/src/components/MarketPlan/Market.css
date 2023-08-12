@@ -1,0 +1,6 @@
+.charts_container{
+    display: grid;
+    padding: 10px;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}

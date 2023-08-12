@@ -1,0 +1,48 @@
+.info_container {
+  position: absolute;
+  top: 15%;
+  left: 30%;
+  background: var(--dark_blue);
+  width: 38rem;
+  display: flex;
+  min-height: 53rem;
+  padding: 47px 20px;
+  flex-direction: column;
+  font-size: 1.6rem;
+  color: var(--white) !important;
+  z-index: 3;
+  justify-content: space-between;
+}
+.sub_task_cheacks {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.cheackSub {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 10px;
+  background: var(--dark);
+}
+.cheackSub input {
+  width: 18px;
+  height: 18px;
+}
+.hidepop {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.statusinfo select {
+  width: 80%;
+  background: var(--dark_blue);
+  color: var(--white);
+  padding: 9px;
+}
+.statusinfo option {
+  background-color: transparent;
+  color: var(--white);
+}

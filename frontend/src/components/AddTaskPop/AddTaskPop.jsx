@@ -14,7 +14,6 @@ function AddTaskPop() {
   const statusRef = useRef();
   const subtaskRefs = useRef([]);
   const parms = useParams();
-  console.log("parms.id:", parms.id); // Check the value of parms.id
 
   const getBoards = async () => {
     try {

@@ -6,7 +6,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 function Sidebar() {
-  const { toggle, darkMode } = useContext(funContext);
+  const { toggle, darkMode, setshowInfo } = useContext(funContext);
   const [boards, setBoards] = useState();
   const params = useParams();
   const getBoards = async () => {
@@ -40,7 +40,12 @@ function Sidebar() {
     });
   };
   return (
-    <section className="Sidebar">
+    <section
+      className="Sidebar"
+      onClick={() => {
+        setshowInfo(false);
+      }}
+    >
       <nav>
         <li>
           <Link to="/" className="">
