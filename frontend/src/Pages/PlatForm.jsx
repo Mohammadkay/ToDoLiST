@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Sidebar from "../components/Slidebar/Sidebar";
 import Navbar from "../components/Navbar/Navbar";
 import "./Platform.css";
@@ -7,11 +7,15 @@ import AddTaskPop from "../components/AddTaskPop/AddTaskPop";
 function platform() {
   return (
     <>
-      {" "}
       <div className="container">
         <Sidebar />
 
-        <div style={{ width: "80%" }}>
+        <div
+          style={{
+            minWidth: "80%",
+            width: "100%"
+          }}
+        >
           <Navbar add={true} />
           <Lists />
         </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./Slidebar.css";
 import { funContext } from "../../context/FunProvider";
@@ -6,6 +6,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 function Sidebar() {
+  const sideRef = useRef();
   const { toggle, darkMode, setshowInfo } = useContext(funContext);
   const [boards, setBoards] = useState();
   const params = useParams();
@@ -39,8 +40,17 @@ function Sidebar() {
       getBoards();
     });
   };
+  const handelSide = () => {
+    console.log(sideRef.current.className);
+    if ((sideRef.current.className === "Sidebar")) {
+      sideRef.current.className = "hide";
+    } else if ((sideRef.current.className === "hide")) {
+      sideRef.current.className = "Sidebar";
+    }
+  };
   return (
     <section
+      ref={sideRef}
       className="Sidebar"
       onClick={() => {
         setshowInfo(false);
@@ -48,15 +58,13 @@ function Sidebar() {
     >
       <nav>
         <li>
-          <Link to="/" className="">
-            ALL BOARD ({boards?.length})
-          </Link>
+          <Link to="/">ALL BOARD ({boards?.length})</Link>
         </li>
         <ul>
           {boards?.map((board) => {
             return (
               <li key={board._id}>
-                <Link to={`/${board?._id}`} className={params.id == board?._id && "Active"}>
+                <Link to={`/${board?._id}`} className={params.id == board?._id ? "Active" : null}>
                   <span>
                     <i className="fa-solid fa-table-list" style={{ color: "#ffffff" }}></i>
                   </span>
@@ -102,8 +110,9 @@ function Sidebar() {
             <i className="fa-solid fa-moon fa-xl" style={{ color: "#919191" }}></i>
           </div>
         </div>
-        <div className="slideBarDisplay" style={{}}>
-          <i className="fa-regular fa-eye-slash" style={{ color: "#919191" }}></i> Hide Sidebar
+        <div className="slideBarDisplay" onClick={handelSide}>
+          <i className="fa-regular fa-eye-slash" style={{ color: "#919191" }}></i>
+          <p>Hide Sidebar</p>
         </div>
       </section>
     </section>

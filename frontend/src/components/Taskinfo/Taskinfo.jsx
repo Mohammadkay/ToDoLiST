@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Task.css";
 
 function Taskinfo(props) {
-  const { showInfo, setshowInfo } = useContext(funContext);
+  const { setshowInfo } = useContext(funContext);
   const [task, setTask] = useState();
   const [sub, setSub] = useState([]);
   const listRef = useRef();
@@ -59,13 +59,15 @@ function Taskinfo(props) {
   /***save */
   const handelSubmit = async () => {
     try {
+      //here i get the preves list for the task
       const prevlist = props.lists.find((ele) => ele.tasks && ele.tasks.find((e) => e === task._id));
-      console.log(prevlist);
+      //here i get the new list from the  id in useref
       const x = props.lists.find((ele) => ele._id === listRef.current.value);
-      console.log(x);
+      //here i add the task to the newl ist
       await axios.patch(`/Api/nixpand/lists/${x._id}`, {
         tasks: [...x.tasks, task._id]
       });
+      //here i drop it from the old one
       const filters = prevlist.tasks.filter((ele) => ele.toString() !== task._id.toString());
       await axios.patch(`/Api/nixpand/lists/${prevlist._id}`, {
         tasks: filters

@@ -54,5 +54,20 @@
   display: flex;
   height: fit-content;
   gap: 10px;
+  justify-content: space-between;
+  padding: 0 10px;
   align-items: center;
+}
+.sortList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.titleheader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.listHeader i {
+  cursor: pointer;
 }

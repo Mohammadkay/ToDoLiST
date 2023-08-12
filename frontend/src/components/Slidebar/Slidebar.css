@@ -3,12 +3,13 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  background-color: #2c2c38;
+  background-color: var(--dark_blue);
   font-size: 1.6rem;
   color: var(--gray);
   width: 35rem;
   padding-top: 7rem;
   border-right: 1px solid var(--gray);
+  transition: 0.5s;
 }
 .Sidebar nav ul {
   display: flex;
@@ -80,7 +81,7 @@
 }
 
 input:checked + .slider {
-  background-color: #5f60c3;
+  background-color: var(--Button_color);
 }
 
 input:focus + .slider {
@@ -128,4 +129,27 @@ input:checked + .slider:before {
   width: 90%;
   border-radius: 0 20rem 20rem 0;
   transition: 0.5s;
+}
+.hide {
+  display: flex;
+
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: #2c2c38;
+  font-size: 1.6rem;
+  color: var(--gray);
+  width: 6rem;
+  padding-top: 7rem;
+  border-right: 1px solid var(--gray);
+  flex-direction: column-reverse;
+  transition: 0.5s;
+}
+.hide nav {
+  display: none;
+}
+.hide .Mood {
+  display: none;
+}
+.hide div p {
+  display: none;
 }
