@@ -1,0 +1,30 @@
+.navbarNav {
+  display: flex;
+  align-items: center;
+  background-color: var(--dark_blue);
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 6rem;
+  color: var(--white);
+}
+
+.nav_btn {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.nav_btn button {
+  background-color: var(--Button_color);
+  padding: 1rem;
+  color: var(--white);
+  border-radius: 3rem;
+  cursor: pointer;
+  border: none;
+}
+.navbarNav h1 {
+  font-size: 2.5rem;
+}
+.nav_btn button:hover{
+  scale: 0.9;
+  transition: 1s;
+}

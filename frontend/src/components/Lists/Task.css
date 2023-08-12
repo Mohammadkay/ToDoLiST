@@ -1,0 +1,12 @@
+.taskContainer {
+  padding: 20px;
+  background: #31313cb3;
+  cursor: pointer;
+}
+.taskContainer p {
+  color: var(--gray);
+}
+.taskContainer:hover {
+  background: #616176c8;
+  transition: 0.5s;
+}

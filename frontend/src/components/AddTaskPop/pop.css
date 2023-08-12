@@ -1,0 +1,89 @@
+.addPopContainer {
+  position: absolute;
+  top: 15%;
+  left: 30%;
+  background: var(--dark_blue);
+  /* min-width: 13rem; */
+  width: 38rem;
+  display: flex;
+  min-height: 53rem;
+  padding: 20px;
+  flex-direction: column;
+  font-size: 1.6rem;
+  color: var(--white) !important;
+}
+.formTask {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px 0;
+}
+.taskFormsInput {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0 10px;
+}
+.taskFormsInput input,
+textarea {
+  background: transparent;
+  outline: none;
+  border: 1px solid var(--gray);
+  width: 100%;
+  margin: auto;
+  padding-left: 5px;
+}
+.taskFormsInput input {
+  height: 3rem;
+}
+.subtaskInput {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 10px;
+}
+.subtaskInput input {
+  width: 80%;
+  height: 3rem;
+  background: transparent;
+  outline: none;
+  border: 1px solid var(--gray);
+  padding-left: 5px;
+}
+.subtaskInput div {
+  display: flex;
+  justify-content: space-around;
+}
+.subtaskInput button {
+  color: var(--Button_color);
+  height: 4rem;
+  border-radius: 50rem;
+  border: none;
+  cursor: pointer;
+}
+.taskFormsInput select {
+  background: transparent;
+  outline: none;
+  border: 1px solid var(--gray);
+  width: 100%;
+  margin: auto;
+  padding-left: 5px;
+  color: var(--white);
+  height: 3rem;
+}
+.taskFormsInput option {
+  background-color: var(--dark_blue);
+  font-size: 2rem;
+}
+.addTaskButton {
+  height: 4rem;
+  border-radius: 50rem;
+  background: var(--Button_color);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+}
+.formTask button:hover {
+  scale: 0.9;
+  transition: 0.5s;
+}
